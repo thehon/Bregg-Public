@@ -1,0 +1,9 @@
+{% load rest_framework %}
+<html><body>
+<h1>Hello</h1>
+{% for friend in profile %}
+<li>{{friend.FirstName}}</li>
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% load rest_framework %}
+<html><body>
+
+<h1> Search For Friends</h1>
+
+<form action = "{% url 'search' %}" method="POST">
+  {% csrf_token %}
+<input type="search" value = "Search For a Friend" name="searchTerm"/>
+<input type="submit" value="Search"/>
+</form>
+
+{% if profile %}
+<table style="width:100%">
+<tr>
+  <th>Name</th>
+</tr>
+{% for p in profile %}
+<tr>
+  <td>{{p.FirstName}}  {{p.LastName}}</td>
+  <td>
+</td>
+{% endfor %}
+</table>
+{% endif %}
+
+</body>
+</html>
